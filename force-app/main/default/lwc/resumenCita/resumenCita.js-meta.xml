@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="fechaCita" type="String" label="Fecha Cita"/>
+            <property name="centroId" type="String" label="Centro"/>
+            <property name="especialistaId" type="String" label="Especialista"/>
+            <property name="event" type="String" label="Evento"/>
+            <property name="nombre" type="String" label="Nombre"/>
+            <property name="apellido" type="String" label="Apellido"/>
+            <property name="email" type="String" label="Email"/>
+            <property name="movil" type="String" label="Movil"/>
+            <property name="observaciones" type="String" label="Observaciones"/>
+        </targetConfig>
+    </targetConfigs> 
+</LightningComponentBundle>

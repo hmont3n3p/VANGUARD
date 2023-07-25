@@ -1,0 +1,100 @@
+<template>
+    <lightning-card title="Informacion Cita" icon-name="custom:custom86">       
+        <div class="demo-only" style="padding: 70px;">
+            <div class="slds-scoped-notification slds-media slds-media_center slds-theme_warning" role="status">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-utility-warning" title="warning">
+                        <svg class="slds-icon slds-icon_small" aria-hidden="true">
+                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#warning"></use>
+                        </svg>
+                        <span class="slds-assistive-text">warning</span>
+                    </span>
+                </div>          
+                <div class="slds-media__body">
+                    <p>Esta cita solo sera confirmada a dar clic en el boton "PEDIR CITA".
+                    </p>
+                </div>
+            </div>
+            <br></br>
+            <br></br>
+            <!--<template for:each={especialistas} for:item="especialista">          
+                <lightning-layout horizontal-align="space" key={especialista.Id}>-->
+                    <article class="slds-tile slds-media">
+                        <div class="slds-media__figure">
+                            <span class="slds-avatar slds-avatar_circle slds-avatar_medium">
+                                <img alt="" src="https://www.lightningdesignsystem.com/assets/images/avatar1.jpg"
+                                    title="Lexee L. Jackson avatar" />
+                            </span>
+                        </div>
+                        <div class="slds-media__body">
+                            <h3 class="slds-tile__title slds-truncate">
+                                <template if:true={especialista}><a href={doctorURL}>{especialista.Name}</a></template>
+                            </h3>
+                            <div class="slds-tile__detail">
+                                <dl class="slds-list_horizontal slds-wrap">
+                                    <template if:true={especialista}>
+                                        <dt class="slds-item_label slds-text-color_weak slds-truncate" >Nombre Especialista :</dt>
+                                        <dd class="slds-item_detail slds-truncate" >{especialista.Name}</dd>
+                                    </template>
+                                    <template if:true={centro}>
+                                        <dt class="slds-item_label slds-text-color_weak slds-truncate" >Centro Medico:</dt>
+                                        <dd class="slds-item_detail slds-truncate" >{centro.RealName}</dd>
+                                        <dt class="slds-item_label slds-text-color_weak slds-truncate" >Hora Seleccionada :</dt>
+                                        <template if:true={event}>
+                                        <dd class="slds-item_detail slds-truncate">{event.title}</dd>
+                                    </template>
+                                    </template>
+                                </dl>
+                            </div>
+                        </div>
+                    </article>
+                <!--</lightning-layout>             
+            </template> -->       
+        </div>
+    </lightning-card>
+    <lightning-card title="Informacion Cliente" icon-name="custom:custom111">
+        <div class="demo-only" style="padding: 70px;">
+            <article class="slds-tile slds-media">
+                <div class="slds-media__figure">
+                    <span class="slds-avatar slds-avatar_circle slds-avatar_medium">
+                        <img alt="" src="https://www.lightningdesignsystem.com/assets/images/avatar3.jpg"
+                            title="Lexee L. Jackson avatar" />
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <h3 class="slds-tile__title slds-truncate" title="Lexee L. Jackson">
+                        <a href="#">Lexee L. Jackson</a>
+                    </h3>
+                    <div class="slds-tile__detail">
+                        <dl class="slds-list_horizontal slds-wrap">
+                            <template if:true={nombre}>
+                            <dt class="slds-item_label slds-text-color_weak slds-truncate">Nombre :</dt>
+                            <dd class="slds-item_detail slds-truncate">{nombre}</dd>
+                            </template>
+                            <template if:true={apellido}>
+                            <dt class="slds-item_label slds-text-color_weak slds-truncate">Apellido :</dt>
+                            <dd class="slds-item_detail slds-truncate">{apellido}</dd>
+                            </template>
+                            <template if:true={email}>
+                            <dt class="slds-item_label slds-text-color_weak slds-truncate">Email :</dt>
+                            <dd class="slds-item_detail slds-truncate">{email}</dd>
+                            </template>
+                            <template if:true={movil}>
+                            <dt class="slds-item_label slds-text-color_weak slds-truncate">Movil :</dt>
+                            <dd class="slds-item_detail slds-truncate">{movil}</dd>
+                            </template>
+                            <template if:true={observaciones}>
+                            <dt class="slds-item_label slds-text-color_weak slds-truncate">Observaciones :</dt>
+                            <!--<dd class="slds-item_detail slds-truncate">{observaciones}</dd>-->
+                            <lightning-textarea class="slds-item_detail slds-truncate" disabled value={observaciones}></lightning-textarea>
+                            </template>
+                        </dl>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </lightning-card>
+    <div class="slds-align_absolute-center" >
+        <lightning-button variant="destructive"  label="PEDIR CITA"  onclick={handleEvent} class="slds-text-heading_large custombutton"></lightning-button>       
+    </div>
+</template>
